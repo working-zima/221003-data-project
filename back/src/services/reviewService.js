@@ -67,12 +67,12 @@ const reviewService = {
 
             return await Review.update(reviewId, fieldToUpdate, newValue);
         }
-
+        console.log(locationName)
         if(title && contents && locationName && roadAddress) {
-            review = await update(reviewId, title, "title");
-            review = await update(reviewId, contents, "contents");
-            review = await update(reviewId, locationName, "locationName");
-            review = await update(reviewId, roadAddress, "roadAddress");
+            review = await update(reviewId, "title", title);
+            review = await update(reviewId, "contents", contents);
+            review = await update(reviewId, "locationName", locationName);
+            review = await update(reviewId, "roadAddress", roadAddress);
         }
 
         if(files.reviewFile){
